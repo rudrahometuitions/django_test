@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bqh5o890t*cu2+vbab5!$^7u$aqk@l7r1+8rf$^w)t4_8s0-fw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', 'now.sh', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -76,8 +76,18 @@ WSGI_APPLICATION = 'employee.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'DATABASE_PRIVATE_URL': 'postgresql://postgres:4DG6*G3b3GA5EAgD-a*FEggAGBAdAg16@postgres.railway.internal:5432/railway',
+        'DATABASE_URL': 'postgresql://postgres:4DG6*G3b3GA5EAgD-a*FEggAGBAdAg16@monorail.proxy.rlwy.net:43934/railway',
+        'PGDATA': '/var/lib/postgresql/data/pgdata',
+        'PGDATABASE': 'railway',
+        'PGHOST': 'monorail.proxy.rlwy.net',
+        'PGPASSWORD': '4DG6*G3b3GA5EAgD-a*FEggAGBAdAg16',
+        'PGPORT': '43934',
+        'PGUSER': 'postgres',
+        'POSTGRES_DB': 'railway',
+        'POSTGRES_PASSWORD': '4DG6*G3b3GA5EAgD-a*FEggAGBAdAg16',
+        'POSTGRES_USER': 'postgres',
+        'SSL_CERT_DAYS': '820',
     }
 }
 
@@ -122,3 +132,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
