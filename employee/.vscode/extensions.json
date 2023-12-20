@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "adamsimon.folder-structure",
+        "austin-lin.vscode-project-structure",
+        "huuums.vscode-fast-folder-structure",
+        "moshfeu.compare-folders",
+        "batisteo.vscode-django",
+        "sidthesloth.html5-boilerplate"
+    ]
+}
